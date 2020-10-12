@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<ul>
+  {% for post in object_list %}
+    <h2>{{ post.caption }}</h2>
+    <img src="{{ post.image.url}}">
+  {% endfor %}
+</ul>
+{% endblock %}

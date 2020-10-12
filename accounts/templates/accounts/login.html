@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block style  %}
+<style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui center aligned icon header">
+    <i class="circular user icon"></i>
+     Log-in Here
+    </h2>
+    <form class="ui large form" method="post">
+        {% csrf_token %}
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            {{ form.username }}
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            {{ form.password }}
+          </div>
+        </div>
+
+            <button class="ui fluid large teal submit button" type="submit">login </button>
+
+      </div>
+
+    </form>
+
+    <div class="ui message">
+       <a href="{% url 'accounts:password_reset' %}">Forget password?</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

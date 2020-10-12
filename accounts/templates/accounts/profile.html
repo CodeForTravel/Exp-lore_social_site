@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="ui stackable grid">
+  <div class="ten wide column">
+      <div class="ui segment">
+        <div class="ui right floated button"><a href="{% url 'accounts:edit_profile' %}">Update Profile</a></div>
+        <div class="ui card">
+          <div class="ui content">
+            <h1>hello</h1>
+            {{ user.username }}
+            {{ user.city }}
+            {{ user.about_me }}
+            {{ user.mobile }}
+            {{ user.gender }}
+            {{ user.bio }}
+            {{ user.birth_date }}
+            {{ user.image }}
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="five wide column">
+    <div class="ui segment">
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

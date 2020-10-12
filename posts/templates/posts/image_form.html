@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="ui middle aligned  grid" style="margin-left:330px;">
+  <div class="ui ten wide column" >
+    <h2 class="ui center aligned header"> Upload your image </h2>
+    <form method="post" enctype="multipart/form-data" class="ui form">
+        {% csrf_token %}
+        {{ form.as_p }}
+         <button class="ui fluid large teal submit button" type="submit">Share</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

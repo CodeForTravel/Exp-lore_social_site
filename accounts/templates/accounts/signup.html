@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block style  %}
+<style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+<p></p>
+<div class="ui middle aligned  grid" style="margin-left:330px;">
+  <div class="ui ten wide column" >
+    <h2 class="ui center aligned icon header">
+    <i class="circular sign-in icon"></i>
+    Sign Up Here
+    </h2>
+    <form method="post" class="ui form">
+
+        {% csrf_token %}
+        <div class="ui stacked segment">
+        {{ form.as_p }}
+        </div>
+         <button class="ui fluid large teal submit button" type="submit">Sign-up</button>
+    </form>
+
+    <div class="ui message">
+      Already have a account? <a href="{% url 'accounts:login' %}">login</a>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
